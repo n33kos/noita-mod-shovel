@@ -1,0 +1,55 @@
+<Entity>
+    <AbilityComponent 
+        _enabled="1" 
+        amount_in_inventory="1"
+        cooldown_frames="0" 
+        drop_as_item_on_death="1" 
+        entity_count="1" 
+        entity_file="" 
+        fast_projectile="0" 
+		mana_charge_speed="30"
+		mana_max="0"
+        max_amount_in_inventory="1" 
+        reload_time_frames="0" 
+        shooting_reduces_amount_in_inventory="0" 
+        sprite_file="mods/shovel/files/items_gfx/shovel.xml"
+        swim_propel_amount="20"
+        ui_name="Shovel" 
+        use_gun_script="1" 
+    >
+        <gun_config 
+            actions_per_round="1"
+            shuffle_deck_when_empty="0"
+            reload_time="0"
+            deck_capacity="0"
+            max_child_items="0"
+            recoil="1"
+        />
+        <gunaction_config 
+            fire_rate_wait="40" />
+    </AbilityComponent>
+
+	<HotspotComponent 
+        _tags="shoot_pos" 
+        offset.x="6" 
+        offset.y="0" >
+    </HotspotComponent>
+
+    <Base file="data/entities/base_item.xml" >
+        <ItemComponent
+            item_name="shovel"
+            remove_on_death="1"
+            collect_nondefault_actions="1"
+            play_spinning_animation="1"
+        >
+        </ItemComponent>
+    </Base>
+
+    <LuaComponent 
+        _enabled="1" 
+        execute_on_added="1"
+        remove_after_executed="1"
+        script_source_file="mods/shovel/files/scripts/gun/shovel_init.lua" 
+	>
+    </LuaComponent>
+</Entity>
